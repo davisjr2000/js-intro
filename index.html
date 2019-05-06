@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>JS Intro</title>
+    <script>
+      let isBroken = false
+      const changeBulb = (n) => {
+        let lamp = document.getElementById("lamp")
+        if (!isBroken){
+          if (n === 1){
+            lamp.src = "images/bulb-on.jpg"
+          } else if (n === 2){
+            lamp.src = "images/bulb-off.jpg"
+          } else if (n === 3) {
+            lamp.src = 'images/bulb-broken.jpg'
+            isBroken = true
+          }
+        }
+      }
+    </script>
+  </head>
+  <body>
+     <h1 >Light the bulb!</h1>
+     <img id="lamp" src="images/bulb-off.jpg" onMouseOver=changeBulb(1) onMouseOut=changeBulb(2) onClick=changeBulb(3)>
+  </body>
+</html>
+
